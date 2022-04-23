@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?><testsuite name="nosetests" tests="14" errors="0" failures="0" skip="0"><testcase classname="test_calculatorApp.TestCalculate" name="test_AddInvalid" time="0.001"><system-out><![CDATA[Setup .. 
+tearDown .. 
+]]></system-out></testcase><testcase classname="test_calculatorApp.TestCalculate" name="test_AddPass" time="0.001"><system-out><![CDATA[Setup .. 
+tearDown .. 
+]]></system-out></testcase><testcase classname="test_calculatorApp.TestCalculate" name="test_AddPassWithMockEx1" time="0.002"><system-out><![CDATA[Setup .. 
+tearDown .. 
+]]></system-out></testcase><testcase classname="test_calculatorApp.TestCalculate" name="test_DividByZerror" time="0.002"><system-out><![CDATA[Setup .. 
+You can't divide by zero!
+tearDown .. 
+]]></system-out></testcase><testcase classname="test_calculatorApp.TestCalculate" name="test_DividByZerrorRegex" time="0.003"><system-out><![CDATA[Setup .. 
+You can't divide by zero!
+tearDown .. 
+]]></system-out></testcase><testcase classname="test_calculatorApp.TestCalculate" name="test_MultiplyInvalid" time="0.003"><system-out><![CDATA[Setup .. 
+tearDown .. 
+]]></system-out></testcase><testcase classname="test_calculatorApp.TestCalculate" name="test_MultiplyPass" time="0.003"><system-out><![CDATA[Setup .. 
+tearDown .. 
+]]></system-out></testcase><testcase classname="test_calculatorApp.TestCalculate" name="test_SubtractPassWithMockEx" time="0.003"><system-out><![CDATA[Setup .. 
+tearDown .. 
+]]></system-out></testcase><testcase classname="test_calculatorApp.TestCalculate" name="test_calculateIvalidInput" time="0.004"><system-out><![CDATA[Setup .. 
+inputs can not be null
+tearDown .. 
+]]></system-out></testcase><testcase classname="test_calculatorApp.TestCalculate" name="test_check_user_input" time="0.001"><system-out><![CDATA[Setup .. 
+Input can't be empty
+a input is not a number!
+tearDown .. 
+]]></system-out></testcase><testcase classname="test_calculatorApp.TestCalculate" name="test_divideInvalid" time="0.002"><system-out><![CDATA[Setup .. 
+w input is not a number!
+tearDown .. 
+]]></system-out></testcase><testcase classname="test_calculatorApp.TestCalculate" name="test_dividePass" time="0.003"><system-out><![CDATA[Setup .. 
+tearDown .. 
+]]></system-out></testcase><testcase classname="test_calculatorApp.TestCalculate" name="test_isexit" time="0.001"><system-out><![CDATA[Setup .. 
+tearDown .. 
+]]></system-out></testcase><testcase classname="test_calculatorApp.TestCalculate" name="test_subtract" time="0.001"><system-out><![CDATA[Setup .. 
+tearDown .. 
+]]></system-out></testcase></testsuite>
