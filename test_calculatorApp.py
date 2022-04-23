@@ -16,27 +16,20 @@ class TestCalculate(unittest.TestCase):
         self.addCleanup(self.patcher2.stop)
 
     def test_AddPass(self):
-        self.assertEqual(add(6,3), 9)# will execute the add
-        self.assertEqual(calculate('1',2,3), 5) # will call the mock
+        self.assertEqual(add(6,3), 9)
+        self.assertEqual(calculate('1',2,3), 5) 
 
     def test_AddInvalid(self):
         self.assertNotEqual(calculate('1',9,3), 9)
 
     def test_DividByZerror(self):
         with self.assertRaises(ValueError):
-             calculate('4','0','w')
- 
+             calculate('4','15','0')      
 
-    def test_DividByZerrorRegex(self):
-        with self.assertRaisesRegex(ValueError, "input is not a number!"):
-             calculate('4','3','w')
-
-    
     def test_AddPassWithMockEx1(self):
         with mock.patch('calculatorApp.add', return_value = 6):
             result = calculate('1',2,4)
         self.assertEqual(result, 6)
-
     def test_subtract(self):
         self.assertEqual(subtract(20,10), 10)
         self.assertNotEqual(subtract(25,10), 10)
@@ -74,32 +67,44 @@ class TestCalculate(unittest.TestCase):
         self.assertEqual(divide(7,2), 3.5)
         self.assertEqual(divide(30,2), 15)
        
-
     @mock.patch('calculatorApp.divide', return_value =5)
     def test_divideInvalid(self,mock_check): 
+        self.assertNotEqual(divide(15,3),6)
         self.assertNotEqual(divide(30,2), 14)
         self.assertNotEqual(divide(7,2), 3)
         self.assertNotEqual(divide(0,5),5)
         with self.assertRaisesRegex(ValueError, "input is not a number!"):
-                 calculate('4','15','mm') 
+            calculate('4','3','w')
 
     def test_DividByZerror(self):   
             with self.assertRaises(ZeroDivisionError):
                 calculatorApp.divide(5,0)    
      
-    def testcheck_user_input(self):
+    def test_DividByZerrorRegex(self):
+        with self.assertRaisesRegex(ZeroDivisionError, "You can't divide by zero!"):
+             calculate('4',5,'0')   
+
+    def test_calculateIvalidInput(self):
+        with self.assertRaisesRegex(ValueError, "inputs can not be null"):
+            calculate('1',"","")
+        with self.assertRaisesRegex(Exception,"Invalid choice"):
+            calculate('6',15,5)      
+
+    def test_check_user_input(self):
        self.assertEqual(check_user_input(4),4)
        self.assertAlmostEqual(check_user_input('6.12'), 6.12)
        with self.assertRaises(ValueError):
            calculatorApp.check_user_input("")
-       with self.assertRaises(ValueError):
-            calculatorApp.check_user_input("a")        
+       with self.assertRaisesRegex(ValueError,"a input is not a number!"):
+            check_user_input("a")        
 
     def test_isexit(self):
         self.assertTrue(isExit("no"))
         self.assertFalse(isExit("yes"))
         with self.assertRaises(ValueError):
             calculatorApp.isExit("aa")
+        with self.assertRaisesRegex(ValueError,"Invalid choice"):
+            isExit("aa")
 
 
     def tearDown(self):
